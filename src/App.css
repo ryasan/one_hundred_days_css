@@ -1,38 +1,81 @@
-.App {
+.app {
+  background-color: #fdfdfd;
+  height: 100vh;
+  width: 100%;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header-column {
+  position: relative;
+}
+
+.header-title {
+  font-size: 60px;
+  color: white;
+  background-color: black;
+  height: 100px;
+  line-height: 100px;
+  transform: skew(-15deg) rotate(-10deg) translate(10px, 10px);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-subtitle {
+  font-size: 20px;
+  margin: auto 0;
+  padding: 0 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-image {
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.progress-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.progress-item {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #e9e9e9;
+  border-radius: 2px;
+}
+
+.progress-item.completed {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.project-list {
+  margin: 50px 0;
+  padding: 0 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.project-item-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.project-item-iframe {
+  height: 500px;
+  width: 100%;
 }
