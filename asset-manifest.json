@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/one_hundred_days_css/static/css/main.8fe31dea.css",
+    "main.js": "/one_hundred_days_css/static/js/main.f328352a.js",
+    "static/media/code.png": "/one_hundred_days_css/static/media/code.74a7983a4ea2cade24c4.png",
+    "index.html": "/one_hundred_days_css/index.html",
+    "main.8fe31dea.css.map": "/one_hundred_days_css/static/css/main.8fe31dea.css.map",
+    "main.f328352a.js.map": "/one_hundred_days_css/static/js/main.f328352a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8fe31dea.css",
+    "static/js/main.f328352a.js"
+  ]
+}
