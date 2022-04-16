@@ -1,20 +1,28 @@
+import {useState} from 'react'
+import PropTypes from 'prop-types'
 import './App.css'
-import BannerImage from './assets/code.png'
-import submissions from './data'
+import CodeImage from './code-image.png'
+import pens from './data'
 
-function IFrame({title, id}) {
+const cn = (entries) =>
+  Object.entries(entries)
+    .filter((entry) => entry[1])
+    .map((entry) => entry[0])
+    .join(' ')
+
+function IFrame({title, id, classNames}) {
   return (
-    <li className="project-item">
-      <div className="project-item-title">{title}</div>
+    <li className={cn({'pen-item': true, ...classNames})}>
+      <div className="pen-item-title">{title}</div>
       <iframe
-        className="project-item-iframe"
-        scrolling="no"
-        title={`100 Days CSS - ${title}`}
-        src={`https://codepen.io/ryasan86/embed/${id}?default-tab=result&theme-id=dark`}
-        frameborder="no"
-        loading="lazy"
+        allowFullScreen={true}
         allowtransparency="true"
-        allowfullscreen="true">
+        className="pen-item-iframe"
+        frameBorder="no"
+        loading="lazy"
+        scrolling="no"
+        src={`https://codepen.io/ryasan86/embed/${id}?default-tab=result&theme-id=dark`}
+        title={`100 Days CSS - ${title}`}>
         See the Pen <a href={`https://codepen.io/ryasan86/pen/${id}`}>100 Days CSS - 001 Title</a>
         by Ryan Santos (<a href="https://codepen.io/ryasan86">@ryasan86</a>) on
         <a href="https://codepen.io">CodePen</a>.
@@ -23,7 +31,15 @@ function IFrame({title, id}) {
   )
 }
 
+IFrame.propTypes = {
+  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  classNames: PropTypes.object,
+}
+
 function App() {
+  const [activePen, setActivePen] = useState(null)
+
   return (
     <div className="app">
       <div className="inner">
@@ -37,23 +53,42 @@ function App() {
             </p>
           </div>
           <div className="header-column">
-            <img className="header-image" src={BannerImage} alt="code" />
+            <img className="header-image" src={CodeImage} alt="code" />
           </div>
         </header>
         <main className="main">
           <ul className="progress-list">
-            {submissions.map((submission, index) => (
-              <li className={`progress-item ${submission && 'completed'.trim()}`} key={index}>
+            {pens.map((submission, index) => (
+              <li
+                key={index}
+                className={cn({
+                  'active': activePen && submission?.id === activePen?.id,
+                  'completed': submission,
+                  'progress-item': true,
+                })}
+                onClick={() => {
+                  if (submission) setActivePen(submission)
+                }}>
                 {index + 1}
               </li>
             ))}
           </ul>
 
-          <ul className="project-list">
-            {submissions.filter(Boolean).map((s, index) => (
-              <IFrame key={index} title={s.title} id={s.id} />
-            ))}
-          </ul>
+          <div className="reset">
+            <button className="reset-button" onClick={() => setActivePen(null)}>
+              Reset Filter
+            </button>
+          </div>
+
+          {activePen ? (
+            <IFrame title={activePen.title} id={activePen.id} classNames={{active: true}} />
+          ) : (
+            <ul className="pen-list">
+              {pens.filter(Boolean).map((s, index) => (
+                <IFrame key={index} title={s.title} id={s.id} />
+              ))}
+            </ul>
+          )}
         </main>
       </div>
     </div>

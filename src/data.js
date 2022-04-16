@@ -1,4 +1,4 @@
-const submissions = [
+const pens = [
   {
     id: 'rEgzmB',
     title: '001 Title',
@@ -128,4 +128,4 @@ const submissions = [
   null,
 ]
 
-export default submissions
+export default pens
