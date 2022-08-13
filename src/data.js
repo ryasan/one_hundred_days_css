@@ -1,134 +1,44 @@
-const pens = [
-  {
+const completed = {
+  0: {
     id: 'rEgzmB',
     title: '001 Title',
   },
-  {
+  1: {
     id: 'agxrqY',
     title: '002 Menu Icon',
   },
-  null,
-  {
+  3: {
     id: 'zVgXzy',
     title: '004 Loading',
   },
-  null,
-  {
+  5: {
     id: 'pMzMOa',
     title: '006 Profile',
   },
-  {
+  6: {
     id: 'MNwwgO',
     title: '007 Notifications, Search, and Menu',
   },
-  null,
-  null,
-  {
+  9: {
     id: 'abqNERB',
     title: '010 Watch',
   },
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  {
+  40: {
     id: 'MWOBgzN',
     title: '041 Error Modal',
   },
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  {
+  59: {
     id: 'OJzPKvo',
     title: '060 Blurry Overlay',
   },
-  {
+  60: {
     id: 'OJzVvJV',
     title: '061 CSS Gradient Transition',
   },
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  {
+  83: {
     id: 'vqMOYQ',
     title: '084 Book Cover',
-  },
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-]
+  }
+};
 
-export default pens
+export default Array.from({ length: 100 }, (_, index) => completed[index] || null);
