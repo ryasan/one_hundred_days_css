@@ -1,44 +1,48 @@
 const completed = {
-  0: {
+  1: {
     id: 'rEgzmB',
     title: '001 Title',
   },
-  1: {
+  2: {
     id: 'agxrqY',
     title: '002 Menu Icon',
   },
-  3: {
+  4: {
     id: 'zVgXzy',
     title: '004 Loading',
   },
-  5: {
+  6: {
     id: 'pMzMOa',
     title: '006 Profile',
   },
-  6: {
+  7: {
     id: 'MNwwgO',
     title: '007 Notifications, Search, and Menu',
   },
-  9: {
+  10: {
     id: 'abqNERB',
     title: '010 Watch',
   },
-  40: {
+  41: {
     id: 'MWOBgzN',
     title: '041 Error Modal',
   },
-  59: {
+  60: {
     id: 'OJzPKvo',
     title: '060 Blurry Overlay',
   },
-  60: {
+  61: {
     id: 'OJzVvJV',
     title: '061 CSS Gradient Transition',
   },
-  83: {
+  84: {
     id: 'vqMOYQ',
     title: '084 Book Cover',
+  },
+  14: {
+    id: 'zYRBoEw',
+    title: '014 Byciclopter'
   }
 };
 
-export default Array.from({ length: 100 }, (_, index) => completed[index] || null);
+export default Array.from({ length: 100 }, (_, index) => completed[index + 1] || null);
