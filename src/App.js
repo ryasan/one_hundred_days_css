@@ -21,8 +21,8 @@ function IFrame ({ title, id, classNames }) {
         allowFullScreen={true}
         allowtransparency="true"
         className="pen-item-iframe"
-        src={`https://codepen.io/ryasan86/embed/${ id }?default-tab=result&theme-id=dark`}
-        title={`100 Days CSS - ${ title }`}>
+        title={`100 Days CSS - ${ title }`}
+        src={`https://codepen.io/ryasan86/embed/${ id }?default-tab=result&theme-id=dark`}>
         See the Pen <a href={`https://codepen.io/ryasan86/pen/${ id }`}>100 Days CSS - 001 Title</a>
         by Ryan Santos (<a href="https://codepen.io/ryasan86">@ryasan86</a>) on
         <a href="https://codepen.io">CodePen</a>.
