@@ -46,6 +46,10 @@ const completed = {
   44: {
     id: 'MWVPmgQ',
     title: '044 Twisted Pyramid'
+  },
+  40: {
+    id: 'GRxYBoO',
+    title: '040 Gallery'
   }
 };
 
