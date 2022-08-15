@@ -7,13 +7,13 @@
 	max-width: 1440px;
 }
 
-.header {
+.inner .header {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
 @media (max-width: 768px) {
-	.header {
+	.inner > .header {
 		grid-template-columns: 1fr;
 	}
 }
@@ -24,7 +24,7 @@
 	position: relative;
 }
 
-.header .title {
+.hero .title {
 	align-self: center;
 	background-color: #000000;
 	color: white;
@@ -34,7 +34,7 @@
 	width: 90%;
 }
 
-.header .subtitle {
+.hero .subtitle {
 	font-size: 1.25rem;
 	margin: 3rem auto;
 	max-width: 50rem;
@@ -42,12 +42,12 @@
 }
 
 @media (max-width: 768px) {
-	.header {
+	.inner > .header {
 		text-align: center;
 	}
 }
 
-.header .banner-image {
+.hero .banner-image {
 	width: 100%;
 }
 
@@ -121,7 +121,8 @@
 }
 
 .pen-item {
-  position: relative;
+	display: flex;
+	position: relative;
 }
 
 .pen-item.active {
@@ -129,17 +130,84 @@
 	padding: 0 10%;
 }
 
+.pen-item .header {
+	align-items: center;
+	background-color: #fdfdfd;
+	display: flex;
+	height: 56px;
+	left: -1px;
+	position: absolute;
+	top: -1px;
+	width: calc(100% + 2.5px);
+	z-index: 2;
+}
+
 .pen-item .title {
-	text-overflow: ellipsis;
+	font-size: 20px;
 	overflow: hidden;
+	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
-.pen-item iframe {
-	height: 31.25rem;
+.pen-item .link {
+	background-color: #fdfdfd;
+	border: 0;
+	color: #000;
+	margin-left: 10px;
+	transition: all 0.2s ease-in-out;
+	width: 20px;
+	height: 20px;
+}
+
+.pen-item .link:hover {
+	color: #00a2ff;
+	transform: scale(1.1);
+}
+
+.pen-item .link svg {
+	color: inherit;
+	height: 100%;
 	width: 100%;
-  position: relative;
-  z-index: 1;
+}
+
+.pen-item .iframe-container {
+	height: 500px;
+	position: relative;
+	width: 100%;
+}
+
+.pen-item .iframe-container::before,
+.pen-item .iframe-container::after {
+	background-color: #fdfdfd;
+	content: '';
+	height: 100%;
+	position: absolute;
+	left: -2.5px;
+	top: 0;
+	width: 5px;
+	z-index: 1;
+}
+
+.pen-item .iframe-container::after {
+	background-color: #fdfdfd;
+	left: initial;
+	right: -2px;
+}
+
+.pen-item iframe {
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+.pen-item .footer {
+	background-color: #fdfdfd;
+	bottom: -3px;
+	height: 38px;
+	left: -1px;
+	position: absolute;
+	width: calc(100% + 2.5px);
+	z-index: 2;
 }
 
 .loader {
@@ -149,10 +217,10 @@
 	border-style: solid;
 	border-width: 0.4rem;
 	height: 3rem;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
 	width: 3rem;
 }
 
