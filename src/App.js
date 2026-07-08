@@ -32,7 +32,7 @@ function App () {
             <p className='subtitle'>
               Tracking my progress through the
               <a href='https://100dayscss.com/'>"100 Days of CSS" challenge</a>.
-              A fun set of exercises designed to level up you UI building game!
+              A fun set of exercises designed to level up your CSS skills!
             </p>
           </div>
           <div className='hero'>
