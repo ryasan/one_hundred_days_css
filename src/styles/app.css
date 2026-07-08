@@ -22,6 +22,7 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	justify-content: center;
 }
 
 .hero .title {
@@ -39,6 +40,10 @@
 	margin: 3rem auto;
 	max-width: 50rem;
 	padding: 0 2rem;
+}
+
+.subtitle a {
+	color: #00a2ff;
 }
 
 @media (max-width: 768px) {
@@ -94,7 +99,7 @@
 	color: white;
 	font-size: 1.125rem;
 	margin: 0 auto;
-	margin-top: 3.125rem;
+	margin-top: 2rem;
 	padding: 0.625rem 1.25rem;
 	transform: skew(-10deg);
 }
@@ -108,10 +113,11 @@
 
 .pen-list {
 	margin-top: 3.125rem;
-	padding: 0 10%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 1.25rem;
+	max-width: 1000px;
+	margin: 20px auto 0;
 }
 
 @media (max-width: 768px) {
@@ -157,6 +163,7 @@
 	transition: all 0.2s ease-in-out;
 	width: 20px;
 	height: 20px;
+	flex-shrink: 0;
 }
 
 .pen-item .link:hover {
@@ -171,9 +178,13 @@
 }
 
 .pen-item .iframe-container {
-	height: 500px;
 	position: relative;
+	margin: 0 auto;
+	aspect-ratio: 406 / 500;
+	max-width: 406px;
+	max-height: 500px;
 	width: 100%;
+	height: 100%;
 }
 
 .pen-item .iframe-container::before,
